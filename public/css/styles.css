@@ -1,0 +1,20 @@
+.food {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  margin-right: 200px;
+}
+
+.sleep {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  margin-right: 180px;
+}
+
+.activity {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  margin-right: 10px;
+}

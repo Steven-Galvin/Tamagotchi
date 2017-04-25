@@ -6,7 +6,8 @@ class Tamagotchi
     @food_level = 10
     @sleep_level = 10
     @activity_level = 10
-    @tmgc_array = [@name, @food_level, @sleep_level, @activity_level]
+    @timestamp = Time.new
+    @tmgc_array = [@name, @food_level, @sleep_level, @activity_level, @timestamp]
     @@all_tmgcs.push(@tmgc_array)
   end
 
@@ -83,6 +84,18 @@ class Tamagotchi
       if tmgc[3] != 0
         tmgc[3] -= 2
       end
+    end
+  end
+
+  define_singleton_method(:time_check) do
+    current_time = Time.new()
+    @@all_tmgcs.each() do |tmgc|
+      time_elapsed = current_time - tmgc[4]
+      while time_elapsed > 60 do
+        Tamagotchi.time_passes
+        time_elapsed -= 60
+      end
+      tmgc[4] = Time.new()
     end
   end
 end

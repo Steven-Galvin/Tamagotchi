@@ -1,11 +1,121 @@
 <p>Here are all the Tamagotchis you've created:</p>
 
+<div class="row">
+  <div class="col-xs-11"><h2>First Tamagotchi Name</h2></div>
+</div>
+
+<div class="row">
+<div class="col-xs-2 food food10">
+</div>
+
+
+<div class="col-xs-2 sleep sleep10">
+</div>
+
+<div class="col-xs-2 activity activity10">
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2 food food9">
+</div>
+<div class="col-xs-2 sleep sleep9">
+</div>
+<div class="col-xs-2 activity activity9">
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2 food food8">
+</div>
+<div class="col-xs-2 sleep sleep8">
+</div>
+<div class="col-xs-2 activity activity8">
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2 food food7">
+</div>
+<div class="col-xs-2 sleep sleep7">
+</div>
+<div class="col-xs-2 activity activity7">
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2 food food6">
+</div>
+<div class="col-xs-2 sleep sleep6">
+</div>
+<div class="col-xs-2 activity activity6">
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2 food food5">
+</div>
+<div class="col-xs-2 sleep sleep5">
+</div>
+<div class="col-xs-2 activity activity5">
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2 food food4">
+</div>
+<div class="col-xs-2 sleep sleep4">
+</div>
+<div class="col-xs-2 activity activity4">
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2 food food3">
+</div>
+<div class="col-xs-2 sleep sleep3">
+</div>
+<div class="col-xs-2 activity activity3">
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2 food food2">
+</div>
+<div class="col-xs-2 sleep sleep2">
+</div>
+<div class="col-xs-2 activity activity2">
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2 food food1">
+</div>
+<div class="col-xs-2 sleep sleep1">
+</div>
+<div class="col-xs-2 activity activity1">
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2"><h4>FOOD</h4>
+</div>
+<div class="col-xs-2"><h4>SLEEP</h4>
+</div>
+<div class="col-xs-2"><h4>ACTIVITY</h4>
+</div>
+</div>
+
+
+
+
+
 <ul>
   <% @tmgcs.each() do |tmgc| %>
-    <li><%= tmgc.name() %></li>
-    <li><p>Food Level:</p><%= tmgc.food_level() %></li>
-    <li><p>Sleep Level:</p><%= tmgc.sleep_level() %></li>
-    <li><p>Activity Level:</p><%= tmgc.activity_level() %></li>
+    <li><%= tmgc[0] %></li>
+    <li><p>Food Level:</p><%= tmgc[1] %></li>
+    <li><p>Sleep Level:</p><%= tmgc[2] %></li>
+    <li><p>Activity Level:</p><%= tmgc[3] %></li>
   <% end %>
 </ul>
 
@@ -15,3 +125,13 @@
 
   <button type="submit" class="btn">Add Tamogotchi</button>
  </form>
+
+ <% if (6 <= 9)%>
+   <style>.food10 {background-color: #ffffff;}</style>
+ <% end %>
+ <% if (6 <= 8)%>
+   <style>.food9 {background-color: #ffffff;}</style>
+ <% end %>
+ <% if (6 <= 7)%>
+   <style>.food8 {background-color: #ffffff;}</style>
+ <% end %>
