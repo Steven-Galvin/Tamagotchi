@@ -26,8 +26,24 @@ class Tamagotchi
     @tmgc_array[1]
   end
 
+  define_method(:sleep_level) do
+    @tmgc_array[2]
+  end
+
+  define_method(:activity_level) do
+    @tmgc_array[3]
+  end
+
   define_method(:set_food_level) do |number|
     @tmgc_array[1] = number
+  end
+
+  define_method(:set_sleep_level) do |number|
+    @tmgc_array[2] = number
+  end
+
+  define_method(:set_activity_level) do |number|
+    @tmgc_array[3] = number
   end
 
   define_method(:feed) do
@@ -61,8 +77,12 @@ class Tamagotchi
       if tmgc[1] != 0
         tmgc[1] -= 1
       end
-      tmgc[2] -= 1
-      tmgc[3] -= 2
+      if tmgc[2] != 0
+        tmgc[2] -= 1
+      end
+      if tmgc[3] != 0
+        tmgc[3] -= 2
+      end
     end
   end
 end

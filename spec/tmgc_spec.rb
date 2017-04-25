@@ -45,6 +45,17 @@ describe(Tamagotchi) do
       my_pet.feed()
       expect(my_pet.is_alive?()).to(eq(false))
     end
+
+    it("will not reduce any levels below 0") do
+      my_pet = Tamagotchi.new("lil dragon")
+      my_pet.set_food_level(0)
+      my_pet.set_sleep_level(0)
+      my_pet.set_activity_level(0)
+      Tamagotchi.time_passes
+      expect(my_pet.food_level()).to(eq(0))
+      expect(my_pet.sleep_level()).to(eq(0))
+      expect(my_pet.activity_level()).to(eq(0))
+    end
   # it("is alive if care mistakes are below 10") do
   #   my_pet = Tamagotchi.new("lil dragon")
   #   my_pet.care_mistake()
