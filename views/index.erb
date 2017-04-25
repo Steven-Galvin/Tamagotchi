@@ -99,39 +99,89 @@
 
 <div class="row">
 <div class="col-xs-2"><h4>FOOD</h4>
+  <form action="/feed">
+    <button type="submit" class="btn">Feed</button>
+  </form>
 </div>
 <div class="col-xs-2"><h4>SLEEP</h4>
+  <form action="/nap">
+    <button type="submit" class="btn">Nap</button>
+  </form>
 </div>
 <div class="col-xs-2"><h4>ACTIVITY</h4>
+  <form action="/play">
+    <button type="submit" class="btn">Play</button>
+  </form>
 </div>
 </div>
 
+<br>
 
+<br>
 
-
-
-<ul>
+<div class="row">
   <% @tmgcs.each() do |tmgc| %>
-    <li><%= tmgc[0] %></li>
-    <li><p>Food Level:</p><%= tmgc[1] %></li>
-    <li><p>Sleep Level:</p><%= tmgc[2] %></li>
-    <li><p>Activity Level:</p><%= tmgc[3] %></li>
-  <% end %>
-</ul>
+  <div class="well col-xs-2">
+      <li><h3><%= tmgc[0] %></h3></li>
+      <li><h5>Food Level:</h5><%= tmgc[1] %>
+        <form action="/feed">
+          <button type="submit" class="btn">Feed</button>
+        </form>
+      </li>
+
+      <li><h5>Sleep Level:</h5><%= tmgc[2] %>
+        <form action="/nap">
+          <button type="submit" class="btn">Nap</button>
+        </form>
+      </li>
+
+      <li><h5>Activity Level:</h5><%= tmgc[3] %>
+        <form action="/play">
+          <button type="submit" class="btn">Play</button>
+        </form>
+      </li>
+    </div>
+    <% end %>
+</div>
+
+<!-- <% if 10 == 0%>
+<h1>Tamagotchi is dead</h1>
+<% end %> -->
 
 <form action="/display" method="post">
   <label for="name">Name your new Tamagotchi:</label>
   <input id="name" name="name" type="text">
 
-  <button type="submit" class="btn">Add Tamogotchi</button>
+  <button type="submit" class="btn">Add Tamagotchi</button>
  </form>
 
- <% if (6 <= 9)%>
+ <!-- <% if (10 <= 9)%>
    <style>.food10 {background-color: #ffffff;}</style>
  <% end %>
- <% if (6 <= 8)%>
+ <% if (10 <= 8)%>
    <style>.food9 {background-color: #ffffff;}</style>
  <% end %>
- <% if (6 <= 7)%>
+ <% if (10 <= 7)%>
    <style>.food8 {background-color: #ffffff;}</style>
  <% end %>
+ <% if (10 <= 6)%>
+   <style>.food7 {background-color: #ffffff;}</style>
+ <% end %>
+ <% if (10 <= 5)%>
+   <style>.food6 {background-color: #ffffff;}</style>
+ <% end %>
+ <% if (10 <= 4)%>
+   <style>.food5 {background-color: #ffffff;}</style>
+ <% end %>
+ <% if (10 <= 3)%>
+   <style>.food4 {background-color: #ffffff;}</style>
+ <% end %>
+ <% if (10 <= 2)%>
+   <style>.food3 {background-color: #ffffff;}</style>
+ <% end %>
+ <% if (10 <= 1)%>
+   <style>.food2 {background-color: #ffffff;}</style>
+ <% end %>
+ <% if (10 <= 0)%>
+   <style>.food1 {background-color: #ffffff;}</style>
+ <% end %> -->

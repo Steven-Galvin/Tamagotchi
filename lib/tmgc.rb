@@ -15,6 +15,10 @@ class Tamagotchi
     @tmgc_array
   end
 
+  define_method(:retrive_one) do |number|
+    @@all_tmgcs[number]
+  end
+
   define_singleton_method(:all) do
     @@all_tmgcs
   end
@@ -53,12 +57,32 @@ class Tamagotchi
     end
   end
 
+  define_singleton_method(:feed1) do
+    @@all_tmgcs.each do |tmgc|
+      if tmgc[1] != 0
+        tmgc[1] = 10
+      end
+    end
+  end
+
   define_method(:nap) do
     @tmgc_array[2] = 10
   end
 
+  define_singleton_method(:nap1) do
+    @@all_tmgcs.each do |tmgc|
+      tmgc[2] = 10
+    end
+  end
+
   define_method(:play) do
     @tmgc_array[3] = 10
+  end
+
+  define_singleton_method(:play1) do
+    @@all_tmgcs.each do |tmgc|
+      tmgc[3] = 10
+    end
   end
 
   define_method(:sleep_level) do
@@ -91,9 +115,9 @@ class Tamagotchi
     current_time = Time.new()
     @@all_tmgcs.each() do |tmgc|
       time_elapsed = current_time - tmgc[4]
-      while time_elapsed > 60 do
+      while time_elapsed > 30 do
         Tamagotchi.time_passes
-        time_elapsed -= 60
+        time_elapsed -= 30
       end
       tmgc[4] = Time.new()
     end
