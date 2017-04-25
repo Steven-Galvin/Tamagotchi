@@ -1,0 +1,17 @@
+<p>Here are all the Tamagotchis you've created:</p>
+
+<ul>
+  <% @tmgcs.each() do |tmgc| %>
+    <li><%= tmgc.name() %></li>
+    <li><p>Food Level:</p><%= tmgc.food_level() %></li>
+    <li><p>Sleep Level:</p><%= tmgc.sleep_level() %></li>
+    <li><p>Activity Level:</p><%= tmgc.activity_level() %></li>
+  <% end %>
+</ul>
+
+<form action="/display" method="post">
+  <label for="name">Name your new Tamagotchi:</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit" class="btn">Add Tamogotchi</button>
+ </form>
