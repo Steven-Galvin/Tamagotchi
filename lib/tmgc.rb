@@ -23,7 +23,7 @@ class Tamagotchi
   end
 
   define_method(:food_level) do
-    @food_level
+    @tmgc_array[1]
   end
 
   define_method(:set_food_level) do |number|
@@ -31,24 +31,27 @@ class Tamagotchi
   end
 
   define_method(:feed) do
-    @food_level = 10
-  end
-
-  define_singleton_method(:hunger) do
-    @food_level -= 1
+    @tmgc_array[1] = 10
   end
 
   define_method(:sleep_level) do
-    @sleep_level
+    @tmgc_array[2]
   end
 
   define_method(:activity_level) do
-    @activity_level
+    @tmgc_array[3]
   end
 
   define_method(:is_alive?) do
     @tmgc_array[1] > 0
   end
-end
 
-tmgc1 = Tamagotchi.new("Puff")
+  define_singleton_method(:time_passes) do
+    @@all_tmgcs.each do |tmgc|
+      tmgc[1] -= 1
+      tmgc[2] -= 1
+      tmgc[3] -= 2
+      puts(tmgc)
+    end
+  end
+end
