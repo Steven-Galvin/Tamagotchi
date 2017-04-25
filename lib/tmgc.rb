@@ -31,7 +31,17 @@ class Tamagotchi
   end
 
   define_method(:feed) do
-    @tmgc_array[1] = 10
+    if @tmgc_array[1] != 0
+      @tmgc_array[1] = 10
+    end
+  end
+
+  define_method(:nap) do
+    @tmgc_array[2] = 10
+  end
+
+  define_method(:play) do
+    @tmgc_array[3] = 10
   end
 
   define_method(:sleep_level) do
@@ -48,10 +58,11 @@ class Tamagotchi
 
   define_singleton_method(:time_passes) do
     @@all_tmgcs.each do |tmgc|
-      tmgc[1] -= 1
+      if tmgc[1] != 0
+        tmgc[1] -= 1
+      end
       tmgc[2] -= 1
       tmgc[3] -= 2
-      puts(tmgc)
     end
   end
 end

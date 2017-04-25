@@ -39,6 +39,12 @@ describe(Tamagotchi) do
       expect(my_pet.activity_level()).to(eq(8))
     end
 
+    it("will not revive Tamagotchi if food level is 0 and Tamagotchi is fed") do
+      my_pet = Tamagotchi.new("lil dragon")
+      my_pet.set_food_level(0)
+      my_pet.feed()
+      expect(my_pet.is_alive?()).to(eq(false))
+    end
   # it("is alive if care mistakes are below 10") do
   #   my_pet = Tamagotchi.new("lil dragon")
   #   my_pet.care_mistake()
